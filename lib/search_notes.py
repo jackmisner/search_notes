@@ -35,3 +35,12 @@ def search_notes(input_filename, search_parameter):
         return None
     result = [line for line in input_string if search_parameter in line]
     return result
+
+def main():
+    input_filename = "data.txt"
+    output_filename = "todo.txt"
+    search_parameter = "#TODO"
+    write_file_contents(output_filename,search_notes(input_filename, search_parameter))
+
+if __name__ == "__main__":
+    main()
