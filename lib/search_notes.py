@@ -30,7 +30,6 @@ def write_file_contents(output_filename, data):
 def search_notes(input_filename, search_parameter):
     # Get file contents
     input_string = get_file_contents(input_filename)
-    print(input_string)
     if len(input_string) == 0 or len(search_parameter) == 0:
         return None
     result = [line for line in input_string if search_parameter in line]
