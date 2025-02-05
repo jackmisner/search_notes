@@ -1,0 +1,4 @@
+1. Review and update marketing strategy
+2. Fix database connection issue
+3. Develop new feature for mobile app
+4. Optimize server performance

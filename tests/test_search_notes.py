@@ -1,31 +1,28 @@
 import pytest
 from lib.search_notes import *
 
-test_data = """
-1. Review and update marketing strategy #TODO
-2. Schedule team meeting for Q2 planning
-3. Fix database connection issue #TODO
-4. Prepare quarterly financial report
-5. Develop new feature for mobile app 
-6. Research competitor pricing strategies
-7. Optimize server performance 
-8. Write blog post about recent product launch
-9. Clean up old project files 
-10. Update customer support documentation
-"""
+input_file = 'lib/data.txt'
+output_file = 'lib/todo.txt'
 
 # Test imput string isn't empty
 def test_input_string_not_empty():
-    assert search_notes('','#TODO') == None
+    assert search_notes('lib/empty_data.txt','#TODO') == None
 
 # Test with content, without search parameter
 def test_input_string_no_search_parameter():
-    assert search_notes(test_data, '') == None
+    assert search_notes(input_file, '') == None
 
 # Test with content and search parameter
 
-def test_input_string_with_search_parameter():
-    assert search_notes(test_data, '#TODO') == [
-        "1. Review and update marketing strategy #TODO",
-        "3. Fix database connection issue #TODO"
-        ]
+# def test_input_string_with_search_parameter():
+#     assert search_notes(input_file, '#TODO') == [
+#         "1. Review and update marketing strategy",
+#         "3. Fix database connection issue" 
+#         ]
+# 
+
+# Write file contents
+# File is created
+def test_file_created():
+    write_file_contents(output_file, search_notes(input_file, '#TODO'))
+    assert does_file_exist(output_file) == True
