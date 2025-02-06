@@ -14,12 +14,16 @@ def test_input_string_no_search_parameter():
 
 # Test with content and search parameter
 
-# def test_input_string_with_search_parameter():
-#     assert search_notes(input_file, '#TODO') == [
-#         "1. Review and update marketing strategy",
-#         "3. Fix database connection issue" 
-#         ]
-# 
+def test_input_string_with_search_parameter():
+    assert search_notes(input_file, '#TODO') == [
+        "1. Review and update marketing strategy #TODO\n",
+        "3. Fix database connection issue #TODO\n", 
+        "5. Develop new feature for mobile app #TODO\n",
+        "7. Optimize server performance #TODO\n"
+        ]
+    
+def test_cleanup_data():
+    assert cleanup_data(["3. Fix database connection issue #TODO\n"]) == ["Fix database connection issue"]
 
 # Write file contents
 # File is created
